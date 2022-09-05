@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Converter</title>
+  </head>
+
+  <body>
+    <div class="main">
+      
+    <!--/////////////////////////////////////////////////////////// Languages list ////////////////////////////////////////////////////////////-->
+    <div class="languages"> 
+      <a href="index.html"><img style="width:40px; height: 30px; padding: 5px;" src="/images/brazil-flag-xs.png" alt="PT-BR"></a>
+      <a href="ES-ES.html"><img style="width:40px; height: 30px; padding: 5px;" src="/images/spain-flag-xs.png" alt="ES-ES"></a>
+      <a href="EN-US.html"><img style="width:40px; height: 30px; padding: 5px;" src="/images/united-states-of-america-flag-xs.png" alt="EN-US"></a>
+    </div>
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+      
+      <!--////////////////////////////// Convert Decimal to binary ////////////////////////////////////////////////-->
+      <div class="container">
+        <h1 id="title">Converter número decimal para binário.</h1>
+        <div id="numDec">
+          Numero decimal.
+          <input oninput="converterParaBin(this.value)" id="numDecCalc" maxlength="25" size="23" class="inputBin" type="text"/>
+        </div>
+
+        <div id="numBin">
+          Número binário.
+          <div class="outputBin">
+            <h1 id="resBin">0</h1>
+          </div>
+        </div>
+      </div>
+      <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      
+      
+      
+
+
+       <!--////////////////////////////// Convert binary to Decimal ////////////////////////////////////////////////-->
+      <div class="container">
+        <p id="title">Converter número binário para decimal.</p>
+
+        <div id="numBin">
+          Número binário.
+          <input oninput="converterParaDec(this.value)" id="numBinCalc" maxlength="25" size="23" class="inputBin" type="text"/>
+        </div>
+
+        <div id="numDec">
+          Numero decimal.
+          <div class="outputBin">
+            <h1 id="resDec">0</h1>
+          </div>
+      </div>
+    </div>
+      <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    
+
+
+    
+      <!--/////////////////// SCRIPT //////////////////////-->
+      <script src="/script.js"></script>
+      <script>
+        function converterParaBin(num) {
+          var dec = parseInt(num);
+          var bin = dec.toString(2);
+          document.getElementById("resBin").innerText = bin;
+        }
+  
+        function converterParaDec(num) { 
+      
+      var dec = parseInt((num + '').replace(/[^01]/gi, ''), 2);
+      document.getElementById("resDec").innerText = dec;
+  }
+  </script>
+    <!-- ////////////////////////////////////////////////// -->
+ 
+ 
+ 
+ 
+  </body>
+</html>
